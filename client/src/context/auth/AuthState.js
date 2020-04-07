@@ -71,12 +71,14 @@ import {
          }
      try {
          const res = await axios.post('/api/users', formData,config)
+         console.log('test register success')
          dispatch({
              type:REGISTER_SUCCESS,
              payload: res.data 
          })
          loadUser()
      } catch (error) {
+         console.log('test register fail')
         dispatch({
             type:REGISTER_FAIL,
             payload: error.response.data.msg 

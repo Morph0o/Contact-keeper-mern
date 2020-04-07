@@ -5,7 +5,7 @@ import ContactContext from '../../context/contact/contactContext'
      const contactContext = useContext(ContactContext)
      const {addContact,clearCurrent,updateContact, current} = contactContext
      useEffect(()=>{
-         if(!current){
+         if(current !== null){
              setContact(current)
          }else{
             setContact({

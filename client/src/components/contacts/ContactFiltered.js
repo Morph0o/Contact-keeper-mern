@@ -20,7 +20,7 @@ import ContactContext from '../../context/contact/contactContext'
      }
     return (
         <form>
-           <input type='text' ref={text} placeHolder='Filter Contact...' onChange={onChange} />
+           <input type='text' ref={text} placeholder='Filter Contact...' onChange={onChange} />
         </form>
     )
 }

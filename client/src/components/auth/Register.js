@@ -62,7 +62,7 @@ import AuthContext from '../../context/auth/authContext'
                 </div>
                 <div className='form-group'>
                     <label htmlFor='password2'>Confirm Password</label>
-                    <input type='password' name='password2' value={password2} onChange={onChange} minlength='6' required/>
+                    <input type='password' name='password2' value={password2} onChange={onChange} minLength='6' required/>
 
                 </div>
                 <input type='submit' value="Register" className='btn btn-primary btn-block'/>
