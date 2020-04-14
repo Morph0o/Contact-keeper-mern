@@ -34,6 +34,7 @@ import AlertContext from '../../context/alert/alertContext'
         if(email === ''||password === ''){
             setAlert('Please fill in all fields','danger')
         }else{
+            
             login({
                 email,
                 password

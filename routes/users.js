@@ -27,7 +27,7 @@ router.post('/',[
         let user = await User.findOne({email: email})
         
         if(user){
-            res.status(404).json({msg:"user already exists"})
+           return res.status(400).json({msg:"user already exists"})
 
         }
         user = new User({
@@ -49,7 +49,7 @@ router.post('/',[
                 expiresIn: 360000
             },(err, token)=>{
                 if(err) throw err;
-                res.json()
+                res.json({token})
                 
             })
         
