@@ -24,37 +24,49 @@ import {
          user:null
 
      }
+     console.log("before header")
      const [state, dispatch] = useReducer(authReducer, initialState)
-     
+     console.log("after header")
      const loadUser = async()=>{
+        console.log("test1 ")
          if(localStorage.token){
              setAuthToken(localStorage.token)
          }
             try {
+                
                 const res = await axios.get('/api/auth')
+            
                 dispatch({type:USER_LOADED,payload:res.data})
+                
             } catch (err) {
+                
                 dispatch({type:AUTH_ERROR})
             }
      }
      const login = async formData => {
+        console.log("test2 ")
         const config = {
             headers:{
-                'content-type':'application/json'
+                'Content-Type':'application/json'
             }
         }
     try {
+        console.log("test3 ")
         const res = await axios.post('/api/auth', formData,config)
         dispatch({
             type:LOGIN_SUCCESS,
             payload: res.data 
         })
+        
         loadUser()
+        console.log("test4 ")
     } catch (error) {
+        
        dispatch({
            type:LOGIN_FAIL,
            payload: error.response.data.msg 
        })
+       
     }
    }
     const logout = ()=>{
