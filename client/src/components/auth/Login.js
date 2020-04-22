@@ -9,7 +9,9 @@ import AlertContext from '../../context/alert/alertContext'
     const { setAlert } = alertContext
 
     useEffect(()=>{
+        console.log("login useEffect")
         if(isAuthenticated){
+            console.log("is Authenticated")
             props.history.push('/')
         }
         if(error === 'Invalid Credentials'){

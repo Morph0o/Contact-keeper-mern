@@ -24,9 +24,9 @@ import {
          user:null
 
      }
-     console.log("before header")
+    
      const [state, dispatch] = useReducer(authReducer, initialState)
-     console.log("after header")
+     
      const loadUser = async()=>{
         console.log("test1 ")
          if(localStorage.token){
@@ -78,7 +78,7 @@ import {
      const register = async formData => {
          const config = {
              headers:{
-                 'content-type':'application/json'
+                 'Content-Type':'application/json'
              }
          }
      try {
