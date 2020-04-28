@@ -9,7 +9,7 @@ import AlertContext from '../../context/alert/alertContext'
     const { setAlert } = alertContext
 
     useEffect(()=>{
-        console.log("login useEffect")
+        console.log("Loginjs useEffect")
         if(isAuthenticated){
             console.log("is Authenticated")
             props.history.push('/')
