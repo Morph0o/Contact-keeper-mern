@@ -9,7 +9,9 @@ import AlertContext from '../../context/alert/alertContext'
     const { setAlert } = alertContext
 
     useEffect(()=>{
+        console.log("Loginjs useEffect")
         if(isAuthenticated){
+            console.log("is Authenticated")
             props.history.push('/')
         }
         if(error === 'Invalid Credentials'){
@@ -34,11 +36,12 @@ import AlertContext from '../../context/alert/alertContext'
         if(email === ''||password === ''){
             setAlert('Please fill in all fields','danger')
         }else{
-            
+            console.log("login.js")
             login({
                 email,
                 password
             })
+            console.log("after login")
         }
          
      }

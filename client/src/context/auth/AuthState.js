@@ -11,10 +11,10 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOGOUT,
-  CLEAR_ERRORS
+  CLEAR_ERRORS,
 } from '../Types';
 
-const AuthState = props => {
+const AuthState = (props) => {
   const initialState = {
     token: localStorage.getItem('token'),
     isAuthenticated: null,
@@ -27,9 +27,11 @@ const AuthState = props => {
 
   // Load User
   const loadUser = async () => {
+    // load token into default headers
     setAuthToken(localStorage.token);
 
     try {
+      // get logged user
       const res = await axios.get('/api/auth');
 
       dispatch({
@@ -42,11 +44,11 @@ const AuthState = props => {
   };
 
   // Register User
-  const register = async formData => {
+  const register = async (formData) => {
     const config = {
       headers: {
-        'Content-Type': 'application/json'
-      }
+        'Content-Type': 'application/json',
+      },
     };
 
     try {
@@ -67,11 +69,11 @@ const AuthState = props => {
   };
 
   // Login User
-  const login = async formData => {
+  const login = async (formData) => {
     const config = {
       headers: {
-        'Content-Type': 'application/json'
-      }
+        'Content-Type': 'application/json',
+      },
     };
 
     try {
