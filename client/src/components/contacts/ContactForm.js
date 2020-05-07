@@ -27,6 +27,7 @@ import ContactContext from '../../context/contact/contactContext'
      const onChange = e => {setContact({...contact,[e.target.name]:e.target.value})}
      const onSubmit = e => {
          e.preventDefault()
+         
          if(current === null){
          addContact(contact)
         }else{
